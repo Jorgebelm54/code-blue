@@ -1,0 +1,39 @@
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[code]blue</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="sticky">
+        <span><h1>
+            <a href="/"><img src="/assets/logo.png" height="40px" /></a>
+          </h1>
+        </span>
+        <nav>
+          {{#if loggedIn}}
+            <a class="navBtn" href="/dashboard" class="">control panel</a>
+            <a class="navBtn" href="/dashboard" id="logout">logout</a>
+          {{else}}
+            <a class="navBtn" href="/login">login</a>
+            <a class="navBtn" href="/signup">signup</a>
+          {{/if}}
+        </nav>
+      </header>
+      <main>
+        {{{body}}}
+      </main>
+    </div>
+
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+  </body>
+
+</html>
